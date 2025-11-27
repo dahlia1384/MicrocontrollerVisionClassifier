@@ -35,7 +35,7 @@ def format_c_array(data_bytes, var_name):
 
         #include <stdint.h>
 
-        // Generated from TFLite file. Do not edit by hand.
+        // Generated from TFLite file. DO NOT EDIT !!!!
 
         const unsigned char {var_name}[] = {{
           {array_body}
