@@ -4,7 +4,6 @@ import os
 import pathlib
 import sys
 import numpy as np
-from PIL import Image
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers, models, optimizers, callbacks
@@ -71,7 +70,11 @@ def main():
         loss="sparse_categorical_crossentropy",
         metrics=["accuracy"]
     )
-    os.makedirs(os.path.dirname(a.out), exist_ok=True)
+
+    out_dir = os.path.dirname(a.out)
+    if out_dir:
+        os.makedirs(out_dir, exist_ok=True)
+
     cbs = [
         callbacks.ModelCheckpoint(filepath=a.out, monitor="val_accuracy", save_best_only=True, verbose=1),
         callbacks.EarlyStopping(monitor="val_loss", patience=5, restore_best_weights=True)
