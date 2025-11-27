@@ -1,23 +1,4 @@
 #!/usr/bin/env python3
-"""
-train_cnn.py
-
-Train a lightweight CNN for microcontroller deployment.
-Assumes a directory structure like:
-
-data/
-  train/
-    class_0/
-    class_1/
-    ...
-  val/
-    class_0/
-    class_1/
-    ...
-
-Usage:
-    python train_cnn.py --data-root data --img-size 96 --batch-size 32 --epochs 20 --out out/model.h5
-"""
 
 import argparse
 import os
