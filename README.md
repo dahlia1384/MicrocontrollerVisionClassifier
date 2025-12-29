@@ -37,6 +37,16 @@ An embedded TinyML vision classification project optimized for microcontrollers 
 
 ---
 
+## Repository Layout
+
+- `src/`: firmware runtime (app loop, preprocessing, inference)
+- `include/`: public headers
+- `src/model/`: generated model arrays
+- `scripts/`: training and model conversion utilities
+- `boards/`: platform-specific board support packages
+
+---
+
 ## Getting Started
 
 ### 1. Clone the repository
@@ -44,3 +54,34 @@ An embedded TinyML vision classification project optimized for microcontrollers 
 ```bash
 git clone <your_repo_url>.git
 cd <your_repo_name>
+```
+
+### 2. Train a model (optional)
+
+```bash
+python3 scripts/train_cnn.py
+```
+
+### 3. Convert the model to a C array
+
+```bash
+python3 scripts/convert_tflite.py
+python3 scripts/tflite_to_c_array.py --input model.tflite --output src/model/model_data.c
+```
+
+### 4. Configure your board support
+
+Add board-specific startup files and drivers under `boards/`.
+
+### 5. Build the firmware (CMake example)
+
+```bash
+cmake -S . -B build
+cmake --build build
+```
+
+### 6. Flash to your target
+
+```bash
+./scripts/flash_firmware.sh
+```
