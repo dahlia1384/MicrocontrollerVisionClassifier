@@ -1,0 +1,4 @@
+# Optional Python dependencies for training and conversion scripts.
+# Pin or expand these as needed for your workflow.
+numpy
+tensorflow
