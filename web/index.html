@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Microcontroller Vision Classifier</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="hero">
+        <p class="eyebrow">Microcontroller Vision Classifier</p>
+        <h1>Device-ready vision insights</h1>
+        <p class="subtitle">
+          Monitor inference results in real time, visualize confidence trends, and
+          keep your TinyML deployment healthy.
+        </p>
+      </header>
+
+      <section class="panel">
+        <div>
+          <h2>Inference Console</h2>
+          <p class="muted">
+            Use the demo controls to send a sample frame to the backend and see
+            the predicted label and confidence score.
+          </p>
+        </div>
+        <div class="actions">
+          <button id="healthButton">Check backend</button>
+          <button id="inferButton" class="primary">Run inference</button>
+        </div>
+        <div class="status" id="status">Backend status: unknown</div>
+      </section>
+
+      <section class="grid">
+        <div class="card">
+          <h3>Latest Prediction</h3>
+          <p class="metric" id="predictionLabel">--</p>
+          <p class="muted" id="predictionScore">Score: --</p>
+        </div>
+        <div class="card">
+          <h3>Sample Frame</h3>
+          <p class="muted" id="sampleName">Sample: demo-frame</p>
+          <div class="sparkline" id="sparkline"></div>
+        </div>
+        <div class="card">
+          <h3>System Notes</h3>
+          <ul class="notes">
+            <li>Connect your board to stream frames.</li>
+            <li>Configure preprocess dimensions to match the model.</li>
+            <li>Monitor memory headroom during inference.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

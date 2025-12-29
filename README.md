@@ -44,6 +44,8 @@ An embedded TinyML vision classification project optimized for microcontrollers 
 - `src/model/`: generated model arrays
 - `scripts/`: training and model conversion utilities
 - `boards/`: platform-specific board support packages
+- `backend/`: local API server for demo and integration testing
+- `web/`: frontend dashboard for monitoring inference output
 
 ---
 
@@ -95,6 +97,35 @@ cmake --build build
 ```bash
 ./scripts/flash_firmware.sh
 ```
+
+---
+
+## Demo Web App (Frontend + Backend)
+
+The project includes a simple dashboard and a lightweight backend API for local
+testing. Use these to validate data flow before deploying to hardware.
+
+### Backend
+
+```bash
+python3 backend/app.py
+```
+
+The backend runs on `http://localhost:5000` and exposes:
+
+- `GET /api/health`
+- `POST /api/infer`
+
+### Frontend
+
+Serve the static frontend locally:
+
+```bash
+cd web
+python3 -m http.server 8000
+```
+
+Open `http://localhost:8000` to access the dashboard.
 
 ---
 
