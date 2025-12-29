@@ -68,31 +68,31 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 2. Train a model (optional)
+### 3. Train a model (optional)
 
 ```bash
 python3 scripts/train_cnn.py
 ```
 
-### 3. Convert the model to a C array
+### 4. Convert the model to a C array
 
 ```bash
 python3 scripts/convert_tflite.py
 python3 scripts/tflite_to_c_array.py --input model.tflite --output src/model/model_data.c
 ```
 
-### 4. Configure your board support
+### 5. Configure your board support
 
 Add board-specific startup files and drivers under `boards/`.
 
-### 5. Build the firmware (CMake example)
+### 6. Build the firmware (CMake example)
 
 ```bash
 cmake -S . -B build
 cmake --build build
 ```
 
-### 6. Flash to your target
+### 7. Flash to your target
 
 ```bash
 ./scripts/flash_firmware.sh
@@ -116,6 +116,9 @@ The backend runs on `http://localhost:5000` and exposes:
 - `GET /api/health`
 - `POST /api/infer`
 - `GET /api/history`
+
+Sample request/response payloads live in `backend/sample_request.json` and
+`backend/sample_response.json`.
 
 ### Frontend (Flutter)
 
