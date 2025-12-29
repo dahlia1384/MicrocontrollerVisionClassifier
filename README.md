@@ -45,7 +45,7 @@ An embedded TinyML vision classification project optimized for microcontrollers 
 - `scripts/`: training and model conversion utilities
 - `boards/`: platform-specific board support packages
 - `backend/`: local API server for demo and integration testing
-- `web/`: frontend dashboard for monitoring inference output
+- `frontend_flutter/`: Flutter web dashboard for monitoring inference output
 
 ---
 
@@ -116,13 +116,15 @@ The backend runs on `http://localhost:5000` and exposes:
 - `GET /api/health`
 - `POST /api/infer`
 
-### Frontend
+### Frontend (Flutter)
 
-Serve the static frontend locally:
+Run the Flutter web dashboard locally:
 
 ```bash
-cd web
-python3 -m http.server 8000
+cd frontend_flutter
+flutter pub get
+flutter run -d web-server --web-hostname 0.0.0.0 --web-port 8000 \
+  --dart-define=API_BASE=http://localhost:5000
 ```
 
 Open `http://localhost:8000` to access the dashboard.

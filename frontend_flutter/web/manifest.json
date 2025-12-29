@@ -1,0 +1,9 @@
+{
+  "name": "Microcontroller Vision Classifier",
+  "short_name": "MCV Dashboard",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#F6F7FB",
+  "theme_color": "#4F46E5",
+  "description": "Dashboard for TinyML inference monitoring."
+}
