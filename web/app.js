@@ -3,7 +3,8 @@ const predictionLabel = document.getElementById("predictionLabel");
 const predictionScore = document.getElementById("predictionScore");
 const sampleNameElement = document.getElementById("sampleName");
 
-const API_BASE = "http://localhost:5000";
+const API_BASE =
+  (window.DEMO_CONFIG && window.DEMO_CONFIG.apiBase) || "http://localhost:5000";
 
 function setStatus(message, ok = true) {
   statusElement.textContent = message;

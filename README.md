@@ -127,6 +127,12 @@ python3 -m http.server 8000
 
 Open `http://localhost:8000` to access the dashboard.
 
+### Run both with one command
+
+```bash
+./scripts/run_demo.sh
+```
+
 ---
 
 ## Model Integration Workflow
