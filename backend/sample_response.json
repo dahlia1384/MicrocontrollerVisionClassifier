@@ -1,0 +1,10 @@
+{
+  "id": 1700000000000,
+  "sample": "demo-frame",
+  "prediction": {
+    "label": 1,
+    "score": 0.842
+  },
+  "latency_ms": 0.42,
+  "timestamp": "2024-01-01T00:00:00+00:00"
+}
